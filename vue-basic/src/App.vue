@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Interpolation from "./components/Interpolation.vue";
 </script>
 
 <template>
-  <HelloWorld />
+    <Interpolation />
 </template>
