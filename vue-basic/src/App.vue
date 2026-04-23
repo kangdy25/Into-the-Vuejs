@@ -4,6 +4,7 @@ import Interpolation from "./components/Interpolation.vue";
 import ConditionalRendering from "./components/ConditionalRendering.vue";
 import ListRendering from "./components/ListRendering.vue";
 import EventHandling from "./components/EventHandling.vue";
+import TwoWayDataBinding from "./components/TwoWayDataBinding.vue";
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import EventHandling from "./components/EventHandling.vue";
     <!-- <DeclarativeRendering /> -->
     <!-- <ConditionalRendering /> -->
     <!-- <ListRendering/> -->
-    <EventHandling />
+    <!-- <EventHandling /> -->
+    <TwoWayDataBinding/>
 </template>
