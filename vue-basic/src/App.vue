@@ -6,6 +6,7 @@ import ListRendering from "./components/ListRendering.vue";
 import EventHandling from "./components/EventHandling.vue";
 import TwoWayDataBinding from "./components/TwoWayDataBinding.vue";
 import ComputedAttribute from "./components/ComputedAttribute.vue";
+import Watcher from "./components/Watcher.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import ComputedAttribute from "./components/ComputedAttribute.vue";
     <!-- <ListRendering/> -->
     <!-- <EventHandling /> -->
     <!-- <TwoWayDataBinding/> -->
-    <ComputedAttribute/>
+    <!-- <ComputedAttribute/> -->
+    <Watcher />
 </template>
