@@ -5,6 +5,7 @@ import ConditionalRendering from "./components/ConditionalRendering.vue";
 import ListRendering from "./components/ListRendering.vue";
 import EventHandling from "./components/EventHandling.vue";
 import TwoWayDataBinding from "./components/TwoWayDataBinding.vue";
+import ComputedAttribute from "./components/ComputedAttribute.vue";
 </script>
 
 <template>
@@ -13,5 +14,6 @@ import TwoWayDataBinding from "./components/TwoWayDataBinding.vue";
     <!-- <ConditionalRendering /> -->
     <!-- <ListRendering/> -->
     <!-- <EventHandling /> -->
-    <TwoWayDataBinding/>
+    <!-- <TwoWayDataBinding/> -->
+    <ComputedAttribute/>
 </template>
