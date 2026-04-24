@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import InlineParent from "./components/Event/InlineParent.vue";
-
 // import DeclarativeRendering from "./components/Basic/DeclarativeRendering.vue";
 // import Interpolation from "./components/Basic/Interpolation.vue";
 // import ConditionalRendering from "./components/Basic/ConditionalRendering.vue";
@@ -17,6 +15,9 @@ import InlineParent from "./components/Event/InlineParent.vue";
 
 // import StaticParent from "./components/Props/StaticParent.vue";
 // import DynamicParent from "./components/Props/DynamicParent.vue";
+
+// import InlineParent from "./components/Event/InlineParent.vue";
+import MethodParent from "./components/Event/MethodParent.vue";
 </script>
 
 <template>
@@ -37,5 +38,6 @@ import InlineParent from "./components/Event/InlineParent.vue";
     <!-- <StaticParent /> -->
     <!-- <DynamicParent /> -->
 
-    <InlineParent />
+    <!-- <InlineParent /> -->
+    <MethodParent />
 </template>
