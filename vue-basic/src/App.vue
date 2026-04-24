@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Creation from "./components/LifeCycle/Creation.vue";
+// import Creation from "./components/LifeCycle/Creation.vue";
+import Mounting from "./components/LifeCycle/Mounting.vue";
 
 // import DeclarativeRendering from "./components/DeclarativeRendering.vue";
 // import Interpolation from "./components/Interpolation.vue";
@@ -21,5 +22,6 @@ import Creation from "./components/LifeCycle/Creation.vue";
     <!-- <ComputedAttribute/> -->
     <!-- <Watcher /> -->
 
-    <Creation />
+    <!-- <Creation /> -->
+    <Mounting />
 </template>
