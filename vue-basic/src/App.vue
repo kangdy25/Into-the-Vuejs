@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import Destruction from "./components/LifeCycle/Destruction.vue";
+
 // import Creation from "./components/LifeCycle/Creation.vue";
 // import Mounting from "./components/LifeCycle/Mounting.vue";
-import Updating from "./components/LifeCycle/Updating.vue";
+// import Updating from "./components/LifeCycle/Updating.vue";
 
 // import DeclarativeRendering from "./components/DeclarativeRendering.vue";
 // import Interpolation from "./components/Interpolation.vue";
@@ -25,5 +27,6 @@ import Updating from "./components/LifeCycle/Updating.vue";
 
     <!-- <Creation /> -->
     <!-- <Mounting /> -->
-    <Updating />
+    <!-- <Updating /> -->
+    <Destruction />
 </template>
