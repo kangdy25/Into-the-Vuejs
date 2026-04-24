@@ -1,32 +1,35 @@
 <script setup lang="ts">
-import Destruction from "./components/LifeCycle/Destruction.vue";
+import StaticParent from "./components/Props/StaticParent.vue";
+
+// import DeclarativeRendering from "./components/Basic/DeclarativeRendering.vue";
+// import Interpolation from "./components/Basic/Interpolation.vue";
+// import ConditionalRendering from "./components/Basic/ConditionalRendering.vue";
+// import ListRendering from "./components/Basic/ListRendering.vue";
+// import EventHandling from "./components/Basic/EventHandling.vue";
+// import TwoWayDataBinding from "./components/Basic/TwoWayDataBinding.vue";
+// import ComputedAttribute from "./components/Basic/ComputedAttribute.vue";
+// import Watcher from "./components/Basic/Watcher.vue";
 
 // import Creation from "./components/LifeCycle/Creation.vue";
 // import Mounting from "./components/LifeCycle/Mounting.vue";
 // import Updating from "./components/LifeCycle/Updating.vue";
-
-// import DeclarativeRendering from "./components/DeclarativeRendering.vue";
-// import Interpolation from "./components/Interpolation.vue";
-// import ConditionalRendering from "./components/ConditionalRendering.vue";
-// import ListRendering from "./components/ListRendering.vue";
-// import EventHandling from "./components/EventHandling.vue";
-// import TwoWayDataBinding from "./components/TwoWayDataBinding.vue";
-// import ComputedAttribute from "./components/ComputedAttribute.vue";
-// import Watcher from "./components/Watcher.vue";
+// import Destruction from "./components/LifeCycle/Destruction.vue";
 </script>
 
 <template>
-    <!-- <Interpolation /> -->
-    <!-- <DeclarativeRendering /> -->
-    <!-- <ConditionalRendering /> -->
-    <!-- <ListRendering/> -->
-    <!-- <EventHandling /> -->
-    <!-- <TwoWayDataBinding/> -->
-    <!-- <ComputedAttribute/> -->
-    <!-- <Watcher /> -->
+    <!-- <Interpolation />
+    <DeclarativeRendering />
+    <ConditionalRendering />
+    <ListRendering />
+    <EventHandling />
+    <TwoWayDataBinding />
+    <ComputedAttribute />
+    <Watcher />
 
-    <!-- <Creation /> -->
-    <!-- <Mounting /> -->
-    <!-- <Updating /> -->
-    <Destruction />
+    <Creation />
+    <Mounting />
+    <Updating />
+    <Destruction /> -->
+
+    <StaticParent />
 </template>
