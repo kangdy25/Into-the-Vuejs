@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import DynamicParent from "./components/Props/DynamicParent.vue";
-// import StaticParent from "./components/Props/StaticParent.vue";
+import InlineParent from "./components/Event/InlineParent.vue";
 
 // import DeclarativeRendering from "./components/Basic/DeclarativeRendering.vue";
 // import Interpolation from "./components/Basic/Interpolation.vue";
@@ -15,6 +14,9 @@ import DynamicParent from "./components/Props/DynamicParent.vue";
 // import Mounting from "./components/LifeCycle/Mounting.vue";
 // import Updating from "./components/LifeCycle/Updating.vue";
 // import Destruction from "./components/LifeCycle/Destruction.vue";
+
+// import StaticParent from "./components/Props/StaticParent.vue";
+// import DynamicParent from "./components/Props/DynamicParent.vue";
 </script>
 
 <template>
@@ -33,5 +35,7 @@ import DynamicParent from "./components/Props/DynamicParent.vue";
     <Destruction /> -->
 
     <!-- <StaticParent /> -->
-    <DynamicParent />
+    <!-- <DynamicParent /> -->
+
+    <InlineParent />
 </template>
