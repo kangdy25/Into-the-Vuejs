@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import StaticParent from "./components/Props/StaticParent.vue";
+import DynamicParent from "./components/Props/DynamicParent.vue";
+// import StaticParent from "./components/Props/StaticParent.vue";
 
 // import DeclarativeRendering from "./components/Basic/DeclarativeRendering.vue";
 // import Interpolation from "./components/Basic/Interpolation.vue";
@@ -31,5 +32,6 @@ import StaticParent from "./components/Props/StaticParent.vue";
     <Updating />
     <Destruction /> -->
 
-    <StaticParent />
+    <!-- <StaticParent /> -->
+    <DynamicParent />
 </template>
