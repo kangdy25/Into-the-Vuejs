@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Pinia from "./components/Pinia/pinia.vue";
+
 // import DeclarativeRendering from "./components/Basic/DeclarativeRendering.vue";
 // import Interpolation from "./components/Basic/Interpolation.vue";
 // import ConditionalRendering from "./components/Basic/ConditionalRendering.vue";
@@ -17,7 +19,7 @@
 // import DynamicParent from "./components/Props/DynamicParent.vue";
 
 // import InlineParent from "./components/Event/InlineParent.vue";
-import MethodParent from "./components/Event/MethodParent.vue";
+// import MethodParent from "./components/Event/MethodParent.vue";
 </script>
 
 <template>
@@ -39,5 +41,7 @@ import MethodParent from "./components/Event/MethodParent.vue";
     <!-- <DynamicParent /> -->
 
     <!-- <InlineParent /> -->
-    <MethodParent />
+    <!-- <MethodParent /> -->
+
+    <Pinia />
 </template>

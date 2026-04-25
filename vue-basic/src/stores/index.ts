@@ -18,7 +18,7 @@ export const useStore = defineStore("main", {
         increment() {
             this.count++;
         },
-        randomSizeCounter() {
+        randomizeCounter() {
             this.count = Math.round(100 * Math.random());
         },
     },
