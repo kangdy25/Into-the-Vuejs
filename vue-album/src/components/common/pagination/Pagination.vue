@@ -2,8 +2,9 @@
   <Pagination
     v-slot="{ page }"
     :total="100"
+    :items-per-page="10"
     :sibling-count="1"
-    :show-edges
+    show-edges
     :default-page="1"
   >
     <PaginationContent v-slot="{ items }" class="flex items-center gap-1">
@@ -18,7 +19,7 @@
         >
           <Button
             class="w-10 h-10 p-0"
-            :variant="item.value === currentPage ? 'default' : 'outline'"
+            :variant="item.value === page ? 'default' : 'outline'"
           >
             {{ item.value }}
           </Button>
@@ -39,7 +40,9 @@ import PaginationEllipsis from "@/components/ui/pagination/PaginationEllipsis.vu
 import PaginationFirst from "@/components/ui/pagination/PaginationFirst.vue";
 import PaginationLast from "@/components/ui/pagination/PaginationLast.vue";
 import PaginationNext from "@/components/ui/pagination/PaginationNext.vue";
-import { PaginationList, PaginationListItem, PaginationPrev } from "reka-ui";
+import PaginationContent from "@/components/ui/pagination/PaginationContent.vue";
+import PaginationPrevious from "@/components/ui/pagination/PaginationPrevious.vue";
+import PaginationItem from "@/components/ui/pagination/PaginationItem.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -47,13 +50,13 @@ export default defineComponent({
   components: {
     Button,
     Pagination,
+    PaginationContent,
     PaginationEllipsis,
     PaginationFirst,
+    PaginationItem,
     PaginationLast,
-    PaginationList,
-    PaginationListItem,
     PaginationNext,
-    PaginationPrev,
+    PaginationPrevious,
   },
 });
 </script>
