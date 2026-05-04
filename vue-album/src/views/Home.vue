@@ -10,14 +10,35 @@
 
 <script>
 import ImageCard from "@/components/common/image-card/ImageCard.vue";
+import axios from "axios";
 
 export default {
   components: {
     ImageCard,
   },
   data() {
-    return {};
+    return {
+      page: 1,
+      searchValue: "Korea",
+      perPage: 30,
+    };
   },
+  methods: {
+    async fetchApi() {
+      const ACCSEE_KEY = import.meta.env.VITE_UNSPLASH_API_KEY
+      const API_URL = `${import.meta.env.VITE_UNSPLASH_API_URL}/photos?page=${this.page}&query=${this.searchValue}&per_page=${this.perPage}&client_id=${ACCSEE_KEY}`;
+
+      try {
+        const res = await axios.get(API_URL)
+        console.log(res)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }, 
+  mounted() {
+    this.fetchApi();
+  }
 };
 </script>
 
