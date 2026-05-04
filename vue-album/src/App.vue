@@ -5,6 +5,7 @@ import {
   CommonPagination,
 } from "@/components/common/index";
 import SearchBar from "./components/ui/search-bar/SearchBar.vue";
+import { useStore } from "./stores";
 
 export default {
   components: {
@@ -12,6 +13,20 @@ export default {
     CommonNavigation,
     CommonPagination,
     SearchBar,
+  },
+  data() {
+    return {
+      store: useStore(),
+      searchValue: "",
+    };
+  },
+  computed: {
+    total() {
+      return this.store.total;
+    },
+    totalPages() {
+      return this.store.totalPages;
+    },
   },
 };
 </script>
@@ -59,7 +74,7 @@ export default {
     <!-- 푸터 -->
     <footer class="page__footer">
       <!-- <CommonPagination /> -->
-      <CommonPagination />
+      <CommonPagination :total="total" :totalPages="totalPages" />
     </footer>
   </div>
 </template>

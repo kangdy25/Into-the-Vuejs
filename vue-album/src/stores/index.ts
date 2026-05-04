@@ -28,5 +28,13 @@ export const useStore = defineStore("main", {
         throw error;
       }
     },
+    setPage(payload: number) {
+      this.page = payload;
+      this.fetchApi();
+    },
+    setSearchValue(payload: string) {
+      this.searchValue = payload;
+      this.setPage(1);
+    },
   },
 });

@@ -1,15 +1,12 @@
 <template>
   <Pagination
-    v-slot="{ page }"
-    :total="100"
-    :items-per-page="10"
-    :sibling-count="1"
-    show-edges
-    :default-page="1"
+    :total="total >= 100 ? 1000 : total"
+    :items-per-page="30"
+    :default-page="currentPage"
   >
-    <PaginationContent v-slot="{ items }" class="flex items-center gap-1">
-      <PaginationFirst />
-      <PaginationPrevious />
+    <PaginationContent v-slot="{ items }">
+      <PaginationFirst @click="changePage(1)" />
+      <PaginationPrevious @click="changePage(currentPage - 1)" />
 
       <template v-for="(item, index) in items" :key="index">
         <PaginationItem
@@ -18,22 +15,22 @@
           as-child
         >
           <Button
-            class="w-10 h-10 p-0"
-            :variant="item.value === page ? 'default' : 'outline'"
+            @click="changePage(item.value)"
+            :variant="item.value === currentPage ? 'default' : 'outline'"
           >
             {{ item.value }}
           </Button>
         </PaginationItem>
-        <PaginationEllipsis v-else :index="index" :key="item.type" />
+        <PaginationEllipsis v-else :index="index" />
       </template>
 
-      <PaginationNext />
-      <PaginationLast />
+      <PaginationNext @click="changePage(currentPage + 1)" />
+      <PaginationLast @click="changePage(Math.min(totalPages, 34))" />
     </PaginationContent>
   </Pagination>
 </template>
 
-<script>
+<script lang="ts">
 import Button from "@/components/ui/button/Button.vue";
 import Pagination from "@/components/ui/pagination/Pagination.vue";
 import PaginationEllipsis from "@/components/ui/pagination/PaginationEllipsis.vue";
@@ -44,6 +41,7 @@ import PaginationContent from "@/components/ui/pagination/PaginationContent.vue"
 import PaginationPrevious from "@/components/ui/pagination/PaginationPrevious.vue";
 import PaginationItem from "@/components/ui/pagination/PaginationItem.vue";
 import { defineComponent } from "vue";
+import { useStore } from "@/stores";
 
 export default defineComponent({
   name: "CommonPagination",
@@ -57,6 +55,31 @@ export default defineComponent({
     PaginationLast,
     PaginationNext,
     PaginationPrevious,
+  },
+  data() {
+    return {
+      store: useStore(),
+    };
+  },
+  computed: {
+    currentPage() {
+      return this.store.page;
+    },
+  },
+  methods: {
+    changePage(page: number) {
+      this.store.setPage(page);
+    },
+  },
+  props: {
+    total: {
+      type: Number,
+      required: true,
+    },
+    totalPages: {
+      type: Number,
+      required: true,
+    },
   },
 });
 </script>
