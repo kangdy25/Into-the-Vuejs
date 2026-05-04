@@ -21,11 +21,30 @@ export default {
     };
   },
   computed: {
+    prevSearchValue() {
+      return this.store.searchValue;
+    },
     total() {
       return this.store.total;
     },
     totalPages() {
       return this.store.totalPages;
+    },
+  },
+  methods: {
+    changeSearchValue(event: string | number) {
+      this.searchValue = String(event);
+    },
+    handleSearch() {
+      if (this.searchValue === "") {
+        this.store.setSearchValue(this.prevSearchValue);
+      } else {
+        this.store.setSearchValue(this.searchValue);
+      }
+    },
+    clickMenu(event: string) {
+      this.changeSearchValue(event);
+      this.handleSearch();
     },
   },
 };
@@ -37,7 +56,7 @@ export default {
     <CommonHeader />
 
     <!-- 네비게이션 메뉴 -->
-    <CommonNavigation />
+    <CommonNavigation @send-event="clickMenu" />
 
     <!-- 검색 창 -->
     <div class="page__wallpaper">
@@ -64,7 +83,10 @@ export default {
             모든 지역에 있는 크리에이터들의 지원을 받습니다.
           </h4>
         </div>
-        <SearchBar />
+        <SearchBar
+          @update:modelValue="changeSearchValue"
+          @keydown.enter="handleSearch"
+        />
       </div>
     </div>
 
@@ -73,7 +95,6 @@ export default {
 
     <!-- 푸터 -->
     <footer class="page__footer">
-      <!-- <CommonPagination /> -->
       <CommonPagination :total="total" :totalPages="totalPages" />
     </footer>
   </div>

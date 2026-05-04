@@ -7,6 +7,7 @@
         variant="ghost"
         class="h-full py-2 px-3 rounded-sm text-sm font-medium hover:bg-neutral-50"
         :class="{ 'bg-neutral-100': menu.isActive }"
+        @click="handleMenuClick(menu)"
       >
         {{ menu.label }}
       </Button>
@@ -16,6 +17,7 @@
 
 <script lang="ts">
 import Button from "@/components/ui/button/Button.vue";
+import { useStore } from "@/stores";
 import { defineComponent } from "vue";
 
 interface NavMenu {
@@ -104,7 +106,19 @@ export default defineComponent({
           isActive: false,
         },
       ] as NavMenu[],
+      store: useStore(),
     };
+  },
+  emits: ["send-event"],
+  methods: {
+    handleMenuClick(menu: NavMenu) {
+      this.menuItems.forEach((item: NavMenu) => {
+        if (item.id === menu.id) item.isActive = true;
+        else item.isActive = false;
+      });
+      this.$emit("send-event", menu.searchValue);
+      this.store.setPage(1);
+    },
   },
 });
 </script>
