@@ -6,6 +6,8 @@ import Watch from "./components/Watch.vue";
 import WatchEffect from "./components/WatchEffect.vue";
 import Parent from "./components/lifecycle/Parent.vue";
 import Pinia from "./components/Pinia.vue";
+import RefInHTML from "./DOM/RefInHTML.vue";
+import DefineExposeParent from "./DOM/DefineExposeParent.vue";
 </script>
 
 <template>
@@ -16,7 +18,9 @@ import Pinia from "./components/Pinia.vue";
     <!-- <Watch /> -->
     <!-- <WatchEffect /> -->
     <!-- <Parent /> -->
-    <Pinia />
+    <!-- <Pinia /> -->
+    <!-- <RefInHTML /> -->
+    <DefineExposeParent />
   </main>
 </template>
 
