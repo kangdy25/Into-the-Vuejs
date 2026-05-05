@@ -4,6 +4,7 @@ import Reactive from "./components/Reactive.vue";
 import Computed from "./components/Computed.vue";
 import Watch from "./components/Watch.vue";
 import WatchEffect from "./components/WatchEffect.vue";
+import Parent from "./components/lifecycle/Parent.vue";
 </script>
 
 <template>
@@ -12,7 +13,8 @@ import WatchEffect from "./components/WatchEffect.vue";
     <!-- <Reactive /> -->
     <!-- <Computed /> -->
     <!-- <Watch /> -->
-    <WatchEffect />
+    <!-- <WatchEffect /> -->
+    <Parent />
   </main>
 </template>
 
