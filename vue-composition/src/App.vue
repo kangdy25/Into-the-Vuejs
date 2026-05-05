@@ -5,6 +5,7 @@ import Computed from "./components/Computed.vue";
 import Watch from "./components/Watch.vue";
 import WatchEffect from "./components/WatchEffect.vue";
 import Parent from "./components/lifecycle/Parent.vue";
+import Pinia from "./components/Pinia.vue";
 </script>
 
 <template>
@@ -14,7 +15,8 @@ import Parent from "./components/lifecycle/Parent.vue";
     <!-- <Computed /> -->
     <!-- <Watch /> -->
     <!-- <WatchEffect /> -->
-    <Parent />
+    <!-- <Parent /> -->
+    <Pinia />
   </main>
 </template>
 
