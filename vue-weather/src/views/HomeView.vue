@@ -1,13 +1,14 @@
 <template>
   <div class="page">
-    HomeView.vue 페이지 컴포넌트
-    <div class="page_container">
-      <div></div>
+    <div class="page__container">
+      <CommonHeader />
       <div
         class="w-full h-full flex flex-col items-center justify-start pb-6 px-6 gap-6"
       >
         <!-- 상단 위젯 영역 -->
-        <div class="w-full flex items-center justify-start gap-6"></div>
+        <div class="w-full flex items-center justify-start gap-6">
+          <WidgetCurrentWeather />
+        </div>
         <!-- 하단 위젯 영역 -->
         <div class="w-full flex items-center gap-6"></div>
       </div>
@@ -15,6 +16,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { CommonHeader } from "@/components/common";
+import { WidgetCurrentWeather } from "@/components/widgets";
+</script>
 
 <style lang="scss" scoped></style>
