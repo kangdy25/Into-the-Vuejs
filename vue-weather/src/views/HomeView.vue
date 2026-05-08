@@ -9,6 +9,8 @@
         <div class="w-full flex items-center justify-start gap-6">
           <WidgetCurrentWeather />
           <WidgetHourlyWeather />
+          <!-- 네이버지도 위젯 -->
+          <WidgetNaverMap />
         </div>
         <!-- 하단 위젯 영역 -->
         <div class="w-full flex items-center gap-6">
@@ -26,6 +28,7 @@ import {
   WidgetCurrentWeather,
   WidgetHighlightWeather,
   WidgetHourlyWeather,
+  WidgetNaverMap,
   WidgetOneWeekWeather,
 } from "@/components/widgets";
 </script>

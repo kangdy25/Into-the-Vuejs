@@ -11,6 +11,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "vue3-naver-maps": fileURLToPath(
+        new URL("./node_modules/vue3-naver-maps/dist/index.js", import.meta.url)
+      ),
     },
   },
 });

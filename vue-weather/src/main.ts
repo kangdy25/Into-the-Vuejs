@@ -5,4 +5,14 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routes";
 
-createApp(App).use(router).mount("#app");
+import { createNaverMap } from "vue3-naver-maps";
+
+createApp(App)
+  .use(router)
+  .use(createNaverMap, {
+    clientId: import.meta.env.VITE_WEATHER_CLIENT_KEY,
+    enableAiMaps: false,
+    category: "ncp",
+    subModules: [],
+  })
+  .mount("#app");
