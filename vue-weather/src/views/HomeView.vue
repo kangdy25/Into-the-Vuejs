@@ -13,6 +13,7 @@
         <!-- 하단 위젯 영역 -->
         <div class="w-full flex items-center gap-6">
           <WidgetHighlightWeather />
+          <WidgetOneWeekWeather />
         </div>
       </div>
     </div>
@@ -25,6 +26,7 @@ import {
   WidgetCurrentWeather,
   WidgetHighlightWeather,
   WidgetHourlyWeather,
+  WidgetOneWeekWeather,
 } from "@/components/widgets";
 </script>
 
