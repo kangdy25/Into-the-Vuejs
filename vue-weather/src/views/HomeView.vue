@@ -11,7 +11,9 @@
           <WidgetHourlyWeather />
         </div>
         <!-- 하단 위젯 영역 -->
-        <div class="w-full flex items-center gap-6"></div>
+        <div class="w-full flex items-center gap-6">
+          <WidgetHighlightWeather />
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +23,7 @@
 import { CommonHeader } from "@/components/common";
 import {
   WidgetCurrentWeather,
+  WidgetHighlightWeather,
   WidgetHourlyWeather,
 } from "@/components/widgets";
 </script>
