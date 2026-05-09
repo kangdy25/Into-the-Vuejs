@@ -14,7 +14,7 @@
         </div>
         <!-- 하단 위젯 영역 -->
         <div class="w-full flex items-center gap-6">
-          <WidgetHighlightWeather />
+          <WidgetHighlightWeather :data="dataOfHLW" />
           <WidgetOneWeekWeather />
         </div>
       </div>
@@ -44,6 +44,16 @@ const dataOfCW = reactive({
   iconUrl: "",
 });
 const dataOfHW = ref([]);
+const dataOfHLW = reactive({
+  minTemp: 0,
+  maxTemp: 0,
+  sunrise: "",
+  sunset: "",
+  humidity: 0,
+  pressure: 0,
+  visibility: 0,
+  feelsLike: 0,
+});
 
 const fetchApi = async () => {
   try {
@@ -63,6 +73,16 @@ const fetchApi = async () => {
 
     // 시간대별 날씨 위젯 컴포넌트에서 필요한 데이터
     dataOfHW.value = forecast.forecastday[0].hour;
+
+    // 하이라이트 날씨 위젯 컴포넌트에서 필요한 데이터
+    dataOfHLW.minTemp = forecast.forecastday[0].day.mintemp_c;
+    dataOfHLW.maxTemp = forecast.forecastday[0].day.maxtemp_c;
+    dataOfHLW.sunrise = forecast.forecastday[0].astro.sunrise;
+    dataOfHLW.sunset = forecast.forecastday[0].astro.sunset;
+    dataOfHLW.humidity = current.humidity;
+    dataOfHLW.pressure = current.pressure_mb;
+    dataOfHLW.visibility = current.vis_km;
+    dataOfHLW.feelsLike = current.feelslike_c;
   } catch (err) {
     console.log(err);
   }

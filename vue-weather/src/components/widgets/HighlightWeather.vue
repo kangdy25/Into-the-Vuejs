@@ -26,7 +26,7 @@
                 <p
                   class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight flex items-start"
                 >
-                  5
+                  {{ data.minTemp }}
                   <span class="text-lg ml-[2px] -mt-[2px]">&#8451;</span>
                 </p>
               </div>
@@ -38,7 +38,7 @@
                 <p
                   class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight flex items-start"
                 >
-                  10
+                  {{ data.maxTemp }}
                   <span class="text-lg ml-[2px] -mt-[2px]">&#8451;</span>
                 </p>
               </div>
@@ -63,7 +63,7 @@
                 <p
                   class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight"
                 >
-                  05:30
+                  {{ data.sunrise }}
                 </p>
               </div>
             </div>
@@ -74,7 +74,7 @@
                 <p
                   class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight"
                 >
-                  18:30
+                  {{ data.sunset }}
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@
             <p
               class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight"
             >
-              80
+              {{ data.humidity }}
               <span class="text-lg ml-1">%</span>
             </p>
           </CardContent>
@@ -111,7 +111,7 @@
             <p
               class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight"
             >
-              1024
+              {{ data.pressure }}
               <span class="text-lg ml-1">hPa</span>
             </p>
           </CardContent>
@@ -128,7 +128,7 @@
             <p
               class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight"
             >
-              10
+              {{ data.visibility }}
               <span class="text-lg ml-1">km</span>
             </p>
           </CardContent>
@@ -145,7 +145,7 @@
             <p
               class="poppins-medium scroll-m-20 text-3xl font-semibold tracking-tight flex items-start"
             >
-              10
+              {{ data.feelsLike }}
               <span class="text-lg ml-[2px] -mt-[2px]">&#8451;</span>
             </p>
           </CardContent>
@@ -156,11 +156,26 @@
 </template>
 
 <script setup lang="ts">
+import { toRefs } from "vue";
 import Card from "../ui/card/Card.vue";
 import CardContent from "../ui/card/CardContent.vue";
 import CardDescription from "../ui/card/CardDescription.vue";
 import CardHeader from "../ui/card/CardHeader.vue";
 import CardTitle from "../ui/card/CardTitle.vue";
+
+interface HighlightData {
+  minTemp: number;
+  maxTemp: number;
+  sunrise: string;
+  sunset: string;
+  humidity: number;
+  pressure: number;
+  visibility: number;
+  feelsLike: number;
+}
+
+const props = defineProps<{ data: HighlightData }>();
+const { data } = toRefs(props);
 </script>
 
 <style lang="scss" scoped></style>
