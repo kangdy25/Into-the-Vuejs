@@ -59,11 +59,13 @@ const { temp, country, cityName, localtime, iconCode, iconUrl } = toRefs(
           <div class="w-full flex flex-col">
             <div class="flex items-center justify-start gap-2">
               <CalendarDays class="h-4 w-4" />
-              <p class="leading-6">{{ localtime.split(" ")[0] }}</p>
+              <p class="leading-6">
+                {{ localtime.split(" ")[0]?.replaceAll("-", ".") }}
+              </p>
             </div>
             <div class="flex items-center justify-start gap-2">
               <MapPinned class="h-4 w-4" />
-              <p class="leading-6">{{ country }}</p>
+              <p class="leading-6">{{ cityName }} &middot; {{ country }}</p>
             </div>
           </div>
         </div>

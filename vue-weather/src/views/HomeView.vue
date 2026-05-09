@@ -8,7 +8,7 @@
         <!-- 상단 위젯 영역 -->
         <div class="w-full flex items-center justify-start gap-6">
           <WidgetCurrentWeather :data="dataOfCW" />
-          <WidgetHourlyWeather />
+          <WidgetHourlyWeather :data="dataOfHW" />
           <!-- 네이버지도 위젯 -->
           <WidgetNaverMap />
         </div>
@@ -43,6 +43,7 @@ const dataOfCW = reactive({
   iconCode: 0,
   iconUrl: "",
 });
+const dataOfHW = ref([]);
 
 const fetchApi = async () => {
   try {
@@ -50,14 +51,18 @@ const fetchApi = async () => {
       `${import.meta.env.VITE_WEATHER_BASE_URL}/forecast.json?q=${cityName.value}&days=7&key=${import.meta.env.VITE_WEATHER_API_KEY}`,
     );
     console.log(res);
+    const { current, location, forecast } = res.data;
 
-    const { current, location } = res.data;
+    // 현재 날씨 위젯 컴포넌트에서 필요한 데이터
     dataOfCW.temp = current.temp_c;
     dataOfCW.country = location.country;
     dataOfCW.cityName = location.name;
     dataOfCW.localtime = location.localtime;
     dataOfCW.iconCode = current.condition.code;
     dataOfCW.iconUrl = current.condition.icon;
+
+    // 시간대별 날씨 위젯 컴포넌트에서 필요한 데이터
+    dataOfHW.value = forecast.forecastday[0].hour;
   } catch (err) {
     console.log(err);
   }
