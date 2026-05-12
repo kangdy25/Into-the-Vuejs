@@ -33,4 +33,11 @@ import SkeletonSubContent from "~/components/skeleton/SkeletonSubContent.vue";
 
 import Separator from "~/components/ui/separator/Separator.vue";
 import { ArrowRight } from "lucide-vue-next";
+import { useStore } from "@/stores";
+
+const store = useStore();
+
+onMounted(() => {
+  store.getNews();
+});
 </script>

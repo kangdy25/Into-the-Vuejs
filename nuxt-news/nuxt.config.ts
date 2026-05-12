@@ -12,5 +12,9 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["shadcn-nuxt"],
+  modules: ["shadcn-nuxt", "@pinia/nuxt"],
+  runtimeConfig: {
+    NEWS_API_KEY: process.env.NEWS_API_KEY,
+    NEWS_API_URL: process.env.NEWS_API_URL,
+  },
 });
