@@ -43,7 +43,7 @@ import SubContent from "~/components/common/SubContent.vue";
 
 const store = useStore();
 
-onMounted(() => {
-  store.getNews();
+await useAsyncData("news", () => store.getNews(), {
+  watch: [() => store.searchValue],
 });
 </script>
